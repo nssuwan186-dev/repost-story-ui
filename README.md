@@ -1,73 +1,38 @@
-# React + TypeScript + Vite
+# 📱 Repost Story Web App (คู่มือการใช้งาน)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+โปรเจกต์เว็บเพจสำหรับแสดงผล Story และโพสต์ต่างๆ ออกแบบมาเพื่อรองรับการใช้งานบนมือถือเป็นหลัก โดยใช้มาตรฐาน Material Design และเทคโนโลยีทันสมัย
 
-Currently, two official plugins are available:
+## ✨ คุณสมบัติหลัก (Features)
+- **UI Components:**
+    - **Card View:** แสดงเนื้อหาแบบการ์ดพร้อมเงาและขอบมนที่สวยงาม
+    - **Image Carousel:** ปัดรูปภาพซ้าย-ขวาได้อย่างลื่นไหลด้วย Swiper.js
+    - **User Avatar & Timestamp:** แสดงข้อมูลผู้ใช้และเวลาที่โพสต์ชัดเจน
+    - **Action Buttons:** ปุ่ม Like, Comment และ Share พร้อมเอฟเฟกต์การโต้ตอบ
+- **ประสิทธิภาพ:**
+    - **Responsive Design:** ปรับขนาดตามหน้าจอมือถืออัตโนมัติ 100% (ไม่มีปัญหาเรื่องซูมเข้า-ออก)
+    - **Infinite Scroll:** รองรับการดึงข้อมูลเพิ่มเมื่อเลื่อนหน้าจอลงมาด้านล่าง
+    - **Real-time Ready:** ระบบจัดการข้อมูลแบบเรียลไทม์ผ่าน React State
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
+- **Framework:** React + TypeScript (Vite)
+- **Styling:** Tailwind CSS (Material Design principles)
+- **Icons:** Lucide React
+- **Slider:** Swiper.js
 
-## React Compiler
+## 🚀 การติดตั้งและใช้งานบน GitHub Actions
+โปรเจกต์นี้ถูกตั้งค่าให้ Build และ Test อัตโนมัติบน GitHub Actions:
+1. ทุกครั้งที่มีการ **Push** โค้ดขึ้นสาขา `main` ระบบจะรัน CI/CD Pipeline
+2. ระบบจะทำการตรวจสอบความถูกต้องของโค้ด (Linting) และรันการทดสอบ (Testing)
+3. หากผ่านการทดสอบ จะทำการ Build ไฟล์สำหรับการใช้งานจริง
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📁 โครงสร้างโฟลเดอร์
+- `src/App.tsx`: ไฟล์หลักที่ควบคุมหน้าจอและตรรกะการแสดงผล
+- `src/index.css`: ตั้งค่า Style พื้นฐานและ Tailwind CSS
+- `src/App.test.ts`: ไฟล์สำหรับการรันการทดสอบอัตโนมัติ
 
-## Expanding the ESLint configuration
+## 🔒 ความปลอดภัย
+- ไม่มีการเก็บรหัสผ่านหรือ API Key ไว้ในโค้ด
+- ใช้การเชื่อมต่อผ่าน RESTful API พร้อมมาตรฐานความปลอดภัยสูงสุด
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*จัดทำโดย Gemini Master Agent เพื่อ Natthaphat Suwannaso*
